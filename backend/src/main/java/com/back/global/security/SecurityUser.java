@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.User;
 
 import java.util.Collection;
 
-@Getter
 public class SecurityUser extends User {
 
     private int id;
@@ -17,5 +16,13 @@ public class SecurityUser extends User {
         super(username, password, authorities);
         this.id = id;
         this.nickname = nickname;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNickname() {
+        return nickname;
     }
 }
