@@ -6,20 +6,20 @@ import java.time.LocalDateTime
 @JvmRecord
 data class PostDto(
     val id: Int,
-    val title: String?,
-    val content: String?,
+    val title: String,
+    val content: String,
     val authorId: Int,
     val authorName: String?,
-    val createDate: LocalDateTime?,
-    val modifyDate: LocalDateTime?
+    val createDate: LocalDateTime,
+    val modifyDate: LocalDateTime
 ) {
     constructor(post: Post) : this(
-        post.getId(),
-        post.getTitle(),
-        post.getContent(),
-        post.getAuthor().getId(),
-        post.getAuthor().getName(),
-        post.getCreateDate(),
-        post.getModifyDate()
+        post.id,
+        post.title,
+        post.content,
+        post.author.id,
+        post.author.name,
+        post.createDate,
+        post.modifyDate
     )
 }
