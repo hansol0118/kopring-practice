@@ -10,7 +10,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import java.util.List;
 
 @Entity
-@Getter
 @NoArgsConstructor
 public class Member extends BaseEntity {
 
@@ -48,5 +47,21 @@ public class Member extends BaseEntity {
         } else {
             return List.of(new SimpleGrantedAuthority("ROLE_USER"));
         }
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public String getApiKey() {
+        return apiKey;
     }
 }
