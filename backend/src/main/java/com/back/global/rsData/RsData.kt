@@ -10,7 +10,15 @@ data class RsData<T>(
 ) {
     constructor(msg: String?, resultCode: String?) : this(msg, resultCode, null)
 
-//    @get:JsonIgnore
-//    val statusCode: Int
-//        get() = resultCode!!.split("-".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0].toInt()
+    @get:JsonIgnore
+    val statusCode: Int
+        get() = resultCode!!
+            .split("-".toRegex())
+            .dropLastWhile { it.isEmpty() }
+            .toTypedArray()[0]
+            .toInt()
+
+//    fun getStatusCode(): Int {
+//        return resultCode!!.split("-".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0].toInt()
+//    }
 }
